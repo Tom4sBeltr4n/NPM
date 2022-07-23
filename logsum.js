@@ -23,7 +23,7 @@ Otra cosa que se puede hacer es usar el comando "npm init" con la opción y. Est
 
 Una de las razones principales para utilizar NPM es su capacidad de aportar código creado por otros a tu proyecto. A estas librerías que traes se les llama dependencias. Para instalar una dependencia, realizamos los siguientes pasos:
 
-Primero, nos movemos a la "carpeta raíz" de nuestro proyecto, es decir, donde está package.json. Luego, corremos el comando "npm i" (i es un apocope de install). Dentro de este comando, hay 2 posibilidades: usar la opción "--save" o usar "--save-dev". "--save" es la que se usa por defecto, y significa que es parte fundamental del paquete, mientras que "--save-dev" lo instala de modo que sólo el desarrollador del nuevo paquete lo use, sin obligar a los usuarios a hacerlo. También se puede instalar paquetes de modo que sean opcionales. Esto se hace con la opción -O
+Primero, nos movemos a la "carpeta raíz" de nuestro proyecto, es decir, donde está package.json. Luego, corremos el comando "npm i" (i es un apocope de install). Dentro de este comando, hay 2 posibilidades: usar la opción "--save" o usar "--save-dev". "--save" es la que se usa por defecto, y significa que es parte fundamental del paquete, mientras que "--save-dev" lo instala de modo que sólo el desarrollador del nuevo paquete lo use, sin obligar a los usuarios a hacerlo. También se puede instalar paquetes de modo que sean opcionales. Esto se hace con la opción -O. Estos son menos usados aun que los  paquetes de desarrollador. Esta diferencia puede ahorrar alrededor de 40 segundos, según el caso.
 
 
 La instalación crea una carpeta llamada "node_modules", donde se instalan los paquetes que necesita nuestro proyecto. Aunque es importante, no es bueno añadirla al repositorio, sino ponerla en el gitignore. Otra cosa que sucede al instalar un paquete es que se añade al archivo package.json, indicando su versión. Los paquetes instalados con --save-dev se almacenan en una llave distinta del JSON que los que se instalan con --save. "--save-dev" se puede reemplazar por -D, y "--save", por -S.
@@ -37,6 +37,16 @@ Sin embargo, la instalación global puede verse denegada por la falta de permiso
 4. Cargar las variables de ambiente con el comando "source ~/.profile"
 
 Una vez hecho lo anterior, podemos instalar paquetes globalmente usando el comando "npm i -g <nombre-del-paquete>". Para ver si se instaló correctamente, podemos ver la lista con el comando "npm list -g --depth 0". --depth indica cuánto se tiene que revisar, siendo 0 una revisión poco profunda.
+
+6. Instalación de dependencias con force
+
+Es posible revisar el resultado de descargar un paquete a través del comando "npm install <package-name> --dry-run", sin realmente descargarlo.
+
+Otra opción que tenemos con npm es descargar la versión más reciente de un paquete, con el comando "npm install <package-name> -f". Esto nos permite tener las versiones más pulidas y estudiadas de un paquete. 
+
+Cuando no especificamos qué paquete queremos instalar, npm va a instalar todos los paquetes que registra el archivo package.json. 
+
+Por otra parte, con el símbolo @ podemos elegir qué versión del paquete queremos descargar: "npm i package@version"
 
 
 
