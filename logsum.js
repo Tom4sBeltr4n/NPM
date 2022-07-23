@@ -12,6 +12,8 @@ Al iniciar una nueva actividad, vamos a necesitar una carpeta donde guardar todo
 
 Este comando nos muestra la configuración necesaria y útil relacionada con todo proyecto nos permite modificarla. En particular, lo que modificamos es el archivo package.json, central en el proyecto que intentamos iniciar. El comando nos ofrece valores por defecto que podamos desear para el proyecto. Podemos interrumpir el comando con "ctrl+c". 
 
+Algo importante por considerar es que, mientras que package.json indica versiones aproximadas o cercanas de un paquete, package-lock.json fija las versiones, de modo que las versiones sean fijas e iguales para todos. Por ello, es aconsejable que sea parte del control de versiones.
+
 Lo primero que nos pide el comando es el nombre del proyecto. Luego, su versión. Después, nos pide la descripción del paquete, que está a nuestra disposición. Posterior a ello, nos pide un "entry point". Este es el archivo desde el que inicia la ejecución del proyecto. Suele tener nombres como index.js o app.js, y estar en una carpeta llamada src. 
 
 En quinto lugar, nos pide un comando de prueba. No es obligatorio usar uno, así que se puede dejar en blanco. Después de ello, nos pide un repositorio git para el proyecto, y nos sugerirá el que ya exista si es el caso. Luego, nos pedirá unas palabras clave, que permitan describir al proyecto para que pueda ser reconocido y categorizado en la comunidad NPM. En octavo lugar, nos pide un autor del proyecto. Ahí podemos poner nuestro correo después de nuestro nombre. Con esto, concluye la creación de la configuración del proyecto.
@@ -47,6 +49,12 @@ Otra opción que tenemos con npm es descargar la versión más reciente de un pa
 Cuando no especificamos qué paquete queremos instalar, npm va a instalar todos los paquetes que registra el archivo package.json. 
 
 Por otra parte, con el símbolo @ podemos elegir qué versión del paquete queremos descargar: "npm i package@version"
+
+7. Cómo actualizar y eliminar paquetes.
+
+Como NPM es un administrador de paquetes, es importante que pueda manejar las versiones y almacenamiento de paquetes. Es importante mantener las versiones más recientes de cada paquete para estar seguros de que cuentan con prácticas adecuadas de seguridad, optimización y otros pulidos importantes. Para ello, se puede revisar la lista de paquetes desactualizados a través de "npm outdate". Si queremos ver parte del proceso de npm outdate, podemos darle la opciión --dd. Por último, al actualización se lleva a cabo con "npm update". Otra forma de actualizar es usar el @, pero en vez de un número de versión, usar la palabra latest (más reciente)
+
+Por otra parte, para eliminar un paquete, podemos utilizar el comando "npm uninstall <package>". Una particularidad del proceso de desinstalación es que se puede conservar el paquete dentro del archivo package.json a través de la bandera --no-save.
 
 
 

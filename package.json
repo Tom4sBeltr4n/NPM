@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/Tom4sBeltr4n/NPM#readme",
   "dependencies": {
-    "json-server": "^0.15.0",
     "moment": "^2.29.4",
     "webpack": "^5.73.0"
   },
