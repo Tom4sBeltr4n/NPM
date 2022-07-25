@@ -52,7 +52,7 @@ Por otra parte, con el símbolo @ podemos elegir qué versión del paquete quere
 
 7. Cómo actualizar y eliminar paquetes.
 
-Como NPM es un administrador de paquetes, es importante que pueda manejar las versiones y almacenamiento de paquetes. Es importante mantener las versiones más recientes de cada paquete para estar seguros de que cuentan con prácticas adecuadas de seguridad, optimización y otros pulidos importantes. Para ello, se puede revisar la lista de paquetes desactualizados a través de "npm outdate". Si queremos ver parte del proceso de npm outdate, podemos darle la opciión --dd. Por último, al actualización se lleva a cabo con "npm update". Otra forma de actualizar es usar el @, pero en vez de un número de versión, usar la palabra latest (más reciente)
+Como NPM es un administrador de paquetes, es importante que pueda manejar las versiones y almacenamiento de paquetes. Es importante mantener las versiones más recientes de cada paquete para estar seguros de que cuentan con prácticas adecuadas de seguridad, optimización y otros pulidos importantes. Para ello, se puede revisar la lista de paquetes desactualizados a través de "npm outdate". Si queremos ver parte del proceso de npm outdate, podemos darle la opciión --dd. Por último, la actualización se lleva a cabo con "npm update". Otra forma de actualizar es usar el @, pero en vez de un número de versión, usar la palabra latest (más reciente)
 
 Por otra parte, para eliminar un paquete, podemos utilizar el comando "npm uninstall <package>". Una particularidad del proceso de desinstalación es que se puede conservar el paquete dentro del archivo package.json a través de la bandera --no-save.
 
