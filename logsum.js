@@ -56,6 +56,9 @@ Como NPM es un administrador de paquetes, es importante que pueda manejar las ve
 
 Por otra parte, para eliminar un paquete, podemos utilizar el comando "npm uninstall <package>". Una particularidad del proceso de desinstalación es que se puede conservar el paquete dentro del archivo package.json a través de la bandera --no-save.
 
+8. Package lock y el uso de los símbolos ^ y ~
+
+
 
 
 Vocabulario:
