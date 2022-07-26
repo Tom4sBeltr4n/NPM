@@ -58,6 +58,17 @@ Por otra parte, para eliminar un paquete, podemos utilizar el comando "npm unins
 
 8. Package lock y el uso de los símbolos ^ y ~
 
+Los paquetes suelen denominar sus versiones con números y puntos. El número a la derecha del segundo punto indica "patches", es decir, versiones que sólo difieren con la anterior por una pequeña reparación de errores (bugfix). El número entre ambos puntos indica actualizaciones menores, es decir, puede incluir: 
+  a) adición de funcionalidades nuevas, que son compatibles regresivamente (como JS) con proyectos realizados con el paquete anteriormente. 
+  b) deprecación de funciones previamente existentes, sin que ello implique que pierdan su capacidad de operar (aunque quizás de formas distintas
+
+Por último, el número a la izquierda del punto indica cambios significativos.
+
+NPM utiliza los símbolos sombrero (^) y "tilde" (~) en el archivo package.json para indicar las versiones que cubre un paquete. El sombrero (también llamado caret, control, exponente o cuña) indica que el proyecto funciona tanto con los patches posteriores de sus dependencias como con los cambios menores posteriores de sus dependencias. Por otra parte, la virgulilla o tilde indica que el proyecto funciona con los paraches posteriores de alguna dependencia, pero no con actualizaciones menores. Para evitar problemas de versiones posteriores, podemos eliminar del todo estos caracteres, de modo que no hayan problemas de compatibilidad inesperados. Además de estos, se pueden usar los comparativos (<, <=, >, >=) para el mismo fin. 
+
+Además de package.json, tras la versión 5 de NPM existe el archivo package-lock.json. Este sirve para registrar las dependencias usadas y las sub-dependencias que estas puedan tener (junto a las versiones de ambas), y no suele incluir ni ^ ni ~.
+
+Tanto package.json como package-lock.json ahorran al repositorio el peso de la carpeta node_modules, pues indican las dependencias que se tienen que descargar, sin necesidad de que GH las registre.
 
 
 
