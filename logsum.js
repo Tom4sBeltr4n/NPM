@@ -27,7 +27,6 @@ Una de las razones principales para utilizar NPM es su capacidad de aportar cód
 
 Primero, nos movemos a la "carpeta raíz" de nuestro proyecto, es decir, donde está package.json. Luego, corremos el comando "npm i" (i es un apocope de install). Dentro de este comando, hay 2 posibilidades: usar la opción "--save" o usar "--save-dev". "--save" es la que se usa por defecto, y significa que es parte fundamental del paquete, mientras que "--save-dev" lo instala de modo que sólo el desarrollador del nuevo paquete lo use, sin obligar a los usuarios a hacerlo. También se puede instalar paquetes de modo que sean opcionales. Esto se hace con la opción -O. Estos son menos usados aun que los  paquetes de desarrollador. Esta diferencia puede ahorrar alrededor de 40 segundos, según el caso.
 
-
 La instalación crea una carpeta llamada "node_modules", donde se instalan los paquetes que necesita nuestro proyecto. Aunque es importante, no es bueno añadirla al repositorio, sino ponerla en el gitignore. Otra cosa que sucede al instalar un paquete es que se añade al archivo package.json, indicando su versión. Los paquetes instalados con --save-dev se almacenan en una llave distinta del JSON que los que se instalan con --save. "--save-dev" se puede reemplazar por -D, y "--save", por -S.
 
 Los paquetes se pueden instalar a distintos niveles: global o local (aunque no sé si haya más niveles posibles). Hay paquetes que se deben instalar en alguno de los dos niveles, o no funcionarán. Un paquete que debe instalarse globalmente es el denominado "nodemon", un demonio que revisa el valor de alguna variable constantemente. 
@@ -69,6 +68,10 @@ NPM utiliza los símbolos sombrero (^) y "tilde" (~) en el archivo package.json 
 Además de package.json, tras la versión 5 de NPM existe el archivo package-lock.json. Este sirve para registrar las dependencias usadas y las sub-dependencias que estas puedan tener (junto a las versiones de ambas), y no suele incluir ni ^ ni ~.
 
 Tanto package.json como package-lock.json ahorran al repositorio el peso de la carpeta node_modules, pues indican las dependencias que se tienen que descargar, sin necesidad de que GH las registre.
+
+9. Ejecutar tareas
+
+NPM provee a los usuarios de la capacidad de crear comandos (aunque funcionan como alias, útiles sólo dentro del proyecto). Estos se pueden correr desde la terminal vía "npm run <alias>". La definición de cada comando se da desde el archivo pakage.json, bajo el apartado de scripts. Dos alias muy comunes son test y start, por lo que los desarrolladores de NPM decidieron integrarlo, de forma que para correr estos comandos la sintaxis es "npm <alias>" (omitiendo run)
 
 
 
