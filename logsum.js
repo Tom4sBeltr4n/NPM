@@ -73,6 +73,12 @@ Tanto package.json como package-lock.json ahorran al repositorio el peso de la c
 
 NPM provee a los usuarios de la capacidad de crear comandos (aunque funcionan como alias, útiles sólo dentro del proyecto). Estos se pueden correr desde la terminal vía "npm run <alias>". La definición de cada comando se da desde el archivo pakage.json, bajo el apartado de scripts. Dos alias muy comunes son test y start, por lo que los desarrolladores de NPM decidieron integrarlo, de forma que para correr estos comandos la sintaxis es "npm <alias>" (omitiendo run)
 
+10. Solución de problemas en proyectos con NPM
+
+Cuando trabajamos con software, es normal que haya problemas en su uso. Por ello, es bueno tener herramientas para comprender lo que pueda pasar cuando sucedan errores. En el caso de NPM, una herramienta útil es la opción "--dd", que nos indica verbalmente los procesos que esté llevando a cabo NPM. Al final del resultado de este comando, aparecerá en pantalla una línea que nos indica pa ubicación y nombre de archivo de un registro (log) de los procesos del comando en cuestión
+
+Por otra parte, a veces los errores pueden suceder porque la carpeta node_modules tiene cache oculto. Para limpiarlo, se usa el comando "npm cache clean --force". Luego, se puede revisar el éxito del comando anterior con otro: "npm cache verify". Otro problema puede surgir cuando los archivos de node_modules están corruptos. Para ello, podemos eliminar la carpeta e instalar todos los paquetes desde cero con "rm -rf node_modules && npm install". En vez de rm -rf, se puede usar "rimraf"
+
 
 
 Vocabulario:
