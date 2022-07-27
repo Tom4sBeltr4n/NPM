@@ -79,6 +79,14 @@ Cuando trabajamos con software, es normal que haya problemas en su uso. Por ello
 
 Por otra parte, a veces los errores pueden suceder porque la carpeta node_modules tiene cache oculto. Para limpiarlo, se usa el comando "npm cache clean --force". Luego, se puede revisar el éxito del comando anterior con otro: "npm cache verify". Otro problema puede surgir cuando los archivos de node_modules están corruptos. Para ello, podemos eliminar la carpeta e instalar todos los paquetes desde cero con "rm -rf node_modules && npm install". En vez de rm -rf, se puede usar "rimraf"
 
+11. Gestionar la seguridad en proyectos con NPM
+
+La seguridad es responsabilidad del desarrollador. Hay que cuidar los proyectos y las dependencias que usamos. NPM nos ayuda con ello cuando instalamos (npm install) las dependencias de un proyecto: nos marca qué dependencias pueden estar desactualizadas o ser vulnerables. Otro comando de NPM que nos ayuda es "npm audit": reviando las vulnerabilidades de los paquetes que tengamos. Este comando tiene la opción --json, que convierte el output en un formato json. 
+
+La resolución de problemas pasa, en parte, por actualizar los paquetes vulnerables. Esto se lleva a cabo con el comando "npm update <nombre-del-paquete> --depth <profundidad,-en-enteros>". Pero algo aún más general es "npm audit fix", que toma los resultados de "npm audit" y resuelve con base en ellos. Una advertencia que vale la pena hacer aquí es que "npm audit fix" puede actualizar nuestros proyectos más de lo que esperamos (más que sólo seguridad), lo que puede afectar el funcionamiento del mismo de otros modos. Es bueno revisar la documentación habitualmente
+
+Por último, un recurso sugerido que nos ayuda a administrar la seguridad de los proyectos es el proyecto snyk (snyk.io). 
+
 
 
 Vocabulario:
