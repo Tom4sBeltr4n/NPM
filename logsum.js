@@ -87,8 +87,14 @@ La resolución de problemas pasa, en parte, por actualizar los paquetes vulnerab
 
 Por último, un recurso sugerido que nos ayuda a administrar la seguridad de los proyectos es el proyecto snyk (snyk.io). 
 
+12. Crear un paquete para NPM
+
+NPM también es una comunidad y almacén de paquetes. Por ello es importante que sepamos cómo contribuir a ella. Para preparar un paquete a NPM, empezamos por el comando "npm init". Este nos prepara nuestro archivo package.json. Después, editamos nuestro archivo de entrada o principal (main/entry point). Cuando tenemos listo ese archivo, lo exportamos como módulo. Después, desarrollamos un ejecutable que importe el módulo anterior y corra alguna función. Por último, añadimos a package.json la clave "bin", al final del archivo, cuyo valor sea un objeto con una clave que indique un nombre que le queramos dar a nuestro ejecutable. El valor de esa clave será la dirección al archivo ejecutable que hemos redactado. Un detalle que se puede agregar es si queremos que el paquete prefiera correr de modo global o no. 
 
 
-Vocabulario:
+
+Curiosidades:
 Demonio: servicio que corre en segundo plano dentro de nuestro sistema
+#!/usr/bin/... es una línea que se usa en archivos de JS destinados para sistemas Bash, de modo que sepan cómo ejecutarlo. (en el caso de random messages, con Node). 
+Los archivos que se exportan con la siguiente sintaxis: "module.exports={<name>}" pasan como objetos para el manejo de otros scripts.
 */
