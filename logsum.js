@@ -94,13 +94,13 @@ NPM también es una comunidad y almacén de paquetes. Por ello es importante que
 
 13. Pubicar un paquete en NPM
 
-Una vez creado el paquete, podemos compartirlo con la comunidad, tal que tanto nosotros mismos como otros puedan revisarlo y utilizarlo, creando un mejor mundo con más productividad. Sin embargo, es responsable probar el funcionamiento de nuestros archivos e indicar las versiones de las dependencias con que funcionan. Para las versiones, podemos usar el comando "sudo npm link". De esta forma, simulamos (a través de archivos de enlace en las carpetas /usr/local/bin y /usr/local/lib a los archivos que recién editamos) la instalación "natural" (es decir, a través de "npm install -g") del paquete y podemos revisarlo adecuadamente. Aparte de ello, se crea un package-lock.json., y revisa que haya vulnerabilidades en el proyecto. En este estado, se puede desinstalar con "npm uninstall <paquete>", para borrar los enlaces previamente descritos
+Una vez creado el paquete, podemos compartirlo con la comunidad, tal que tanto nosotros mismos como otros puedan revisarlo y utilizarlo, creando un mejor mundo con más productividad. Sin embargo, es responsable probar el funcionamiento de nuestros archivos e indicar las versiones de las dependencias con que funcionan. Para las versiones, podemos usar el comando "sudo npm link". De esta forma, simulamos (a través de archivos de enlace en las carpetas /usr/local/bin y /usr/local/lib a los archivos que recién editamos) la instalación "natural" (es decir, a través de "npm install -g") del paquete y podemos revisarlo adecuadamente. Aparte de ello, se crea un package-lock.json, y revisa que haya vulnerabilidades en el proyecto. En este estado, se puede desinstalar con "npm uninstall <paquete>", para borrar los enlaces previamente descritos
 
 Otra forma de probar nuestros paquetes es a través de la instalación con sudo npm install y la ruta a la carpeta donde esté package.json. 
 
 Cuando instalamos el proyecto local y luego realizamos cambios en él, podemos actualizar la instalación con "npm install -g <ruta-de-directorio-de-package.json>"
 
-Con el proyecto listo, podemos publicarlo. Para ello, requerimos registrarnos en npmjs.com. Luego, volvemos a la terminal e insertamos nuestro usuario de npm tras el comando "npm adduser". Luego, insertamos nuestra contraseña y correo electrónico. Luego, usamos el comando "npm publish". Como confirmación, nos entrega una línea que inicia con +.
+Con el proyecto listo, podemos publicarlo. Para ello, requerimos registrarnos en npmjs.com. Luego, volvemos a la terminal e insertamos nuestro usuario de npm tras el comando "npm adduser". Luego, insertamos nuestra contraseña y correo electrónico. Luego, usamos el comando "npm publish". Para usarlo adecuadamente, debemos ubicarnos en la consola en la carpeta donde tenemos nuestro archivo package.json y darle un nombre original y distinto a nuestro paquete (para que no choque con otros paquetes). Como confirmación, nos entrega una línea que inicia con +.
 
 
 
