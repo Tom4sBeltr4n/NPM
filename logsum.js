@@ -33,7 +33,8 @@ Los paquetes se pueden instalar a distintos niveles: global o local (aunque no s
 
 Sin embargo, la instalación global puede verse denegada por la falta de permisos de seguridad informática. Para ello, se puede usar el comando sudo, y sucederlo con lo que queramos instalar. Pero usar sudo es una solución ad hoc. Una solución sistemática es la siguiente:
 1. Crear una carpeta para instalaciones globales en el directorio ~
-2. Configurar a npm para que use esta ruta para las instalaciones con el comando "npm config set prefix '~/.npm-global'"
+2. Configurar a npm para que use esta ruta para las instalaciones con el comando "npm config set prefix '~/.npm-global'" 
+NOTA: esto puede afectar el uso de Node. Si es necesario, se ha de eliminar
 3. Añadir la línea "export PATH=~/.npm-global/bin:$PATH" al archivo ~/.profile
 4. Cargar las variables de ambiente con el comando "source ~/.profile"
 
@@ -102,6 +103,17 @@ Cuando instalamos el proyecto local y luego realizamos cambios en él, podemos a
 
 Con el proyecto listo, podemos publicarlo. Para ello, requerimos registrarnos en npmjs.com. Luego, volvemos a la terminal e insertamos nuestro usuario de npm tras el comando "npm adduser". Luego, insertamos nuestra contraseña y correo electrónico. Luego, usamos el comando "npm publish". Para usarlo adecuadamente, debemos ubicarnos en la consola en la carpeta donde tenemos nuestro archivo package.json y darle un nombre original y distinto a nuestro paquete (para que no choque con otros paquetes). Como confirmación, nos entrega una línea que inicia con +.
 
+14. Paquetes privados
+
+Aunque es fácil subir un paquete, es adecuado que nuestros paquetes cumplan con ciertos estándares que se han creado dentro de la comunidad de NPM. Uno de estos estándares es el uso de documentos "readme.md". Estos documentos permiten a los usuarios comprender con facilidad el uso adecuado del paquete y les ofrece una buena introducción.
+
+Otra buena práctica es conectar el paquete a un repositorio. Para ello, podemos añadirlo como una clave más en la raíz del package.json o realizar de nuevo "npm init" y añadiendo, en el campo de git repository, la URL de nuestro repo. Si lo hicimos bien, al usar el comando "npm docs" se debe abrir la página de nuestro repositorio en línea. Añadir el repositorio es bueno para los paquetes públicos, pues así cualquier usuario puede ver los problemas e historia de nuestro paquete, así como los contribuyentes al mismo.
+
+Además, si no incluimos estos asuntos al crear el paquete, podemos agregarlos como un patch, cambiando la versión del paquete a través del comando "npm version patch" (otras palabras que se pueden usar son major y minor). Para usar este comando, requerimos que nuesstro repositorio este actualizado y sin cambios no comprometidos
+
+Como curiosidad, "npm install -g npm" nos permite actualizar npm, aunque hay otras formas, como usar "nvm install-latest-npm". 
+
+Una vez hemos hecho los cambios que queríamos a nuestro paquete, podemos utilizar "npm publish" de nuevo, para que nuestro paquete se publique
 
 
 
