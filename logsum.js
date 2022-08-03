@@ -18,7 +18,7 @@ Lo primero que nos pide el comando es el nombre del proyecto. Luego, su versión
 
 En quinto lugar, nos pide un comando de prueba. No es obligatorio usar uno, así que se puede dejar en blanco. Después de ello, nos pide un repositorio git para el proyecto, y nos sugerirá el que ya exista si es el caso. Luego, nos pedirá unas palabras clave, que permitan describir al proyecto para que pueda ser reconocido y categorizado en la comunidad NPM. En octavo lugar, nos pide un autor del proyecto. Ahí podemos poner nuestro correo después de nuestro nombre. Con esto, concluye la creación de la configuración del proyecto.
 
-Otra cosa que se puede hacer es usar el comando "npm init" con la opción y. Esto hace que tome los valores naturales o por defecto de cada parámetro que se requiera para el paquete. Estos valores se pueden alterar mediante el comando "npm set init.<nombre-de-la-configuración-deseada> <valor-deseado>"
+Otra cosa que se puede hacer es usar el comando "npm init" con la opción y (npm init -y). Esto hace que tome los valores naturales o por defecto de cada parámetro que se requiera para el paquete. Estos valores se pueden alterar mediante el comando "npm set init.<nombre-de-la-configuración-deseada> <valor-deseado>"
 
 
 5. Instalación de dependencias
@@ -82,7 +82,7 @@ Por otra parte, a veces los errores pueden suceder porque la carpeta node_module
 
 11. Gestionar la seguridad en proyectos con NPM
 
-La seguridad es responsabilidad del desarrollador. Hay que cuidar los proyectos y las dependencias que usamos. NPM nos ayuda con ello cuando instalamos (npm install) las dependencias de un proyecto: nos marca qué dependencias pueden estar desactualizadas o ser vulnerables. Otro comando de NPM que nos ayuda es "npm audit": reviando las vulnerabilidades de los paquetes que tengamos. Este comando tiene la opción --json, que convierte el output en un formato json. 
+La seguridad es responsabilidad del desarrollador. Hay que cuidar los proyectos y las dependencias que usamos. NPM nos ayuda con ello cuando instalamos (npm install) las dependencias de un proyecto: nos marca qué dependencias pueden estar desactualizadas o ser vulnerables. Otro comando de NPM que nos ayuda es "npm audit": reviando las vulnerabilidades de los paquetes que tengamos. Este comando tiene la opción --json, que convierte el output a un formato json. 
 
 La resolución de problemas pasa, en parte, por actualizar los paquetes vulnerables. Esto se lleva a cabo con el comando "npm update <nombre-del-paquete> --depth <profundidad,-en-enteros>". Pero algo aún más general es "npm audit fix", que toma los resultados de "npm audit" y resuelve con base en ellos. Una advertencia que vale la pena hacer aquí es que "npm audit fix" puede actualizar nuestros proyectos más de lo que esperamos (más que sólo seguridad), lo que puede afectar el funcionamiento del mismo de otros modos. Es bueno revisar la documentación habitualmente
 
